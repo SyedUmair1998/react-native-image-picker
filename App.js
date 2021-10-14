@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import MapView,{Polygon, PROVIDER_GOOGLE, Circle} from 'react-native-maps';
+import MapView,{Polygon, PROVIDER_GOOGLE, Circle, Heatmap} from 'react-native-maps';
 import { Marker, Callout } from 'react-native-maps';
 
 
@@ -18,7 +18,7 @@ region = {{
   longitudeDelta:0.03,
 
 }}>
-  <Polygon
+  {/* <Polygon
   coordinates={[
     { latitude:24.860966 , longitude:66.980501 },
     { latitude:24.810966 , longitude:66.970501 },
@@ -45,8 +45,22 @@ region = {{
       <Text style={{color:'red',backgroundColor:'yellow'}}>Karachi</Text>
     </Callout>
 
-  </Marker>
+  </Marker> */}
+<Heatmap 
+points={[
+  { latitude:24.840966 , longitude:66.980501 },
+  { latitude:24.830966 , longitude:66.970501 },
+  { latitude:24.820966 , longitude:66.960501 },
+  { latitude:24.810966,  longitude:66.940501 }
+  ]} 
+  radius={40}
+  gradient={{
+    colors:["black","purple","red","yellow","white"],
+    startPoints:[0.2, 0.4, 0.6, 0.8, 0.9],
+  }}
+  >
 
+</Heatmap>
 </MapView>
 </View>
 
